@@ -1,3 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--background-primary);
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to top, #020202a2, #020202), url('assets/background.png');
+  background-size: contain;
+  background-position: center;
+}
+
 :root {
   --content-primary: #ffffff;
   --content-secondary: #c7c9cc;
