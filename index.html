@@ -1,16 +1,65 @@
 <!DOCTYPE html>
-<html lang="pr-br">
+<html lang="pr-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/logo.png">
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="./script.js" defer></script>
     <title>Numbers</title>
 </head>
 
 <body>
+    <header>
+        <img src="./assets/logo.png" alt="logo" />
+        <h2>Numbers</h2>
+    </header>
+
+    <main>
+        <section id="section-informations" aria-labelledby="info-title">
+            <p class="overline">Online · gratuito</p>
+            <h1 id="info-title" class="display-lg">Sorteador de números</h1>
+
+            <article>
+                <header>
+                    <img src="./assets/avatar.png" alt="" aria-hidden="true">
+                    <h4 class="text-md">Como funciona o sorteador de números?</h4>
+                </header>
+                <p class="text-sm">
+                    O sorteador utiliza um algoritmo de geração aleatória para criar números
+                    dentro do intervalo especificado pelo usuário.
+                </p>
+            </article>
+
+            <article>
+                <header>
+                    <img src="./assets/avatar.png" alt="" aria-hidden="true">
+                    <h4 class="text-md">Posso escolher o intervalo dos números?</h4>
+                </header>
+                <p class="text-sm">
+                    Sim, você pode definir os valores mínimo e máximo para o intervalo dos
+                    números sorteados.
+                </p>
+            </article>
+        </section>
+
+        <section id="section-form">
+            <h3 class="label-md">
+                Quero sortear:
+            </h3>
+            <p class="text-lg">
+                defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido
+                e fácil!
+            </p>
+
+            <button class="label-sm" id="button-form">
+                SORTEAR <img src="./assets/arrow.png" alt="" aria-hidden="true" />
+            </button>
+        </section>
+    </main>
 
 </body>
-<h1> </h1>
 
 </html>
