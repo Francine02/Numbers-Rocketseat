@@ -7,12 +7,13 @@
     <link rel="icon" href="./assets/logo.png">
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
     <script src="./script.js" defer></script>
     <title>Numbers</title>
 </head>
 
 <body>
-    <header>
+    <header id="logo">
         <img src="./assets/logo.png" alt="logo" />
         <h2>Numbers</h2>
     </header>
@@ -46,17 +47,48 @@
         </section>
 
         <section id="section-form">
-            <h3 class="label-md">
-                Quero sortear:
-            </h3>
-            <p class="text-lg">
-                defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido
-                e fácil!
-            </p>
+            <header>
+                <h3 class="label-md">
+                    Quero sortear:
+                </h3>
+                <p class="text-lg">
+                    defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É
+                    rápido
+                    e fácil!
+                </p>
+            </header>
 
-            <button class="label-sm" id="button-form">
-                SORTEAR <img src="./assets/arrow.png" alt="" aria-hidden="true" />
-            </button>
+
+
+            <form>
+                <div id="section-inputs">
+                    <label class="label-sm label-form">
+                        Números
+                        <input class="gradient-border display-sm input-form" />
+                    </label>
+                    <label class="label-sm label-form">
+                        DE
+                        <input class="gradient-border display-sm input-form" />
+                    </label>
+                    <label class="label-sm label-form">
+                        DE
+                        <input class="gradient-border display-sm input-form" />
+                    </label>
+                </div>
+
+                <div id="div-radio">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <p class="text-sm">Não repetir número</p>
+                </div>
+
+
+                <button class="label-sm button-form gradient-border">
+                    SORTEAR <img src="./assets/arrow.png" alt="" aria-hidden="true" />
+                </button>
+            </form>
         </section>
     </main>
 
