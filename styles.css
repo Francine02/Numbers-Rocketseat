@@ -90,7 +90,7 @@ header {
 
   & .input-form {
     height: 56px;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     padding: 4px 8px;
     text-align: center;
     outline: none;
@@ -99,12 +99,27 @@ header {
     &:hover {
       cursor: text;
     }
+
+    &:focus {
+      border: 2px solid transparent !important;
+    }
   }
 
   & #section-inputs {
     display: flex;
     gap: 12px;
   }
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 #div-radio {
@@ -121,16 +136,19 @@ header {
   height: 20px;
 
   & input {
+    position: absolute;
+    inset: 0;
     opacity: 0;
-    width: 0;
-    height: 0;
+    cursor: pointer;
+    margin: 0;
 
     &:checked + .slider {
       background: linear-gradient(var(--gradient-background));
     }
 
-    &:focus + .slider {
-      box-shadow: 0 0 1px linear-gradient(var(--gradient-background));
+    &:focus-visible + .slider {
+      outline: 2px solid var(--content-brand);
+      outline-offset: 2px;
     }
 
     &:checked + .slider:before {
@@ -188,8 +206,14 @@ header {
 
   & img {
     width: 24px;
-    background-color: inherit;
+    background-color: transparent;
     z-index: 1;
+  }
+
+  &:hover {
+    & #arrow-img {
+      animation: moveSide 2s linear infinite;
+    }
   }
 }
 
@@ -223,7 +247,29 @@ header {
   0% {
     background-position: 0% 50%;
   }
-  100% {
+  50% {
     background-position: 100% 50%;
   }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes moveSide {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.toastify-avatar {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: cover !important;
+  background: transparent !important;
 }
