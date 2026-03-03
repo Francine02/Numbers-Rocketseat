@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
     <script src="./script.js" defer></script>
     <title>Numbers</title>
 </head>
 
 <body>
     <header id="logo">
-        <img src="./assets/logo.png" alt="logo" />
+        <img src="./assets/logo.png" alt="" aria-hidden="true" />
         <h2>Numbers</h2>
     </header>
 
@@ -46,47 +48,48 @@
             </article>
         </section>
 
-        <section id="section-form">
+        <section id="section-form" aria-describedby="form-description" aria-labelledby="form-title">
             <header>
-                <h3 class="label-md">
+                <h3 id="form-title" class="label-md">
                     Quero sortear:
                 </h3>
-                <p class="text-lg">
+                <p class="text-lg" id="form-description">
                     defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É
-                    rápido
-                    e fácil!
+                    rápido e fácil!
                 </p>
             </header>
 
-
-
             <form>
                 <div id="section-inputs">
-                    <label class="label-sm label-form">
+                    <label for="quantity-numbers" class="label-sm label-form">
                         Números
-                        <input class="gradient-border display-sm input-form" />
+                        <input required inputmode="numeric" name="quantity-numbers" type="number" id="quantity-numbers"
+                            class="gradient-border display-sm input-form" />
                     </label>
-                    <label class="label-sm label-form">
+                    <label for="min-number" class="label-sm label-form">
                         DE
-                        <input class="gradient-border display-sm input-form" />
+                        <input required inputmode="numeric" name="min-number" type="number" id="min-number"
+                            class="gradient-border display-sm input-form" />
                     </label>
-                    <label class="label-sm label-form">
-                        DE
-                        <input class="gradient-border display-sm input-form" />
+                    <label for="max-number" class="label-sm label-form">
+                        ATÉ
+                        <input required inputmode="numeric" name="max-number" type="number" id="max-number"
+                            class="gradient-border display-sm input-form" />
                     </label>
                 </div>
 
                 <div id="div-radio">
                     <label class="switch">
-                        <input type="checkbox">
+                        <input name="not-repeat" id="not-repeat" type="checkbox">
                         <span class="slider round"></span>
                     </label>
-                    <p class="text-sm">Não repetir número</p>
+                    <label for="not-repeat" class="text-sm">
+                        Não repetir número
+                    </label>
                 </div>
 
-
-                <button class="label-sm button-form gradient-border">
-                    SORTEAR <img src="./assets/arrow.png" alt="" aria-hidden="true" />
+                <button type="submit" class="label-sm button-form gradient-border">
+                    SORTEAR <img id="arrow-img" src="./assets/arrow.png" alt="" aria-hidden="true" />
                 </button>
             </form>
         </section>
