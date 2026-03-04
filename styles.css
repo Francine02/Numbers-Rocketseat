@@ -1,15 +1,17 @@
 body {
   padding: 76px 134px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 main {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 108px;
-
   max-width: 80rem;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 108px;
+  padding-top: 70px;
 }
 
 header {
@@ -29,9 +31,11 @@ header {
   }
 }
 
-#section-informations {
-  padding-top: 89px;
-  width: 100%;
+#section-title {
+  gap: 108px;
+  grid-column: 1;
+  grid-row: 1;
+
   & p {
     background-image: linear-gradient(to right, var(--gradient-content));
     color: transparent;
@@ -41,20 +45,23 @@ header {
   & h1 {
     color: var(--content-primary);
   }
+}
+
+.info-about {
+  width: 386px;
 
   & article {
     padding-top: 38px;
-    width: 386px;
-    & img {
-      width: 20px;
-    }
-    & h4 {
-      color: var(--content-brand);
-    }
-    & p {
-      color: var(--content-secondary);
-      padding-left: 32.5px;
-    }
+  }
+  & img {
+    width: 20px;
+  }
+  & h4 {
+    color: var(--content-brand);
+  }
+  & p {
+    color: var(--content-secondary);
+    padding-left: 32.5px;
   }
 }
 
@@ -63,6 +70,10 @@ header {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-top: 34px;
+
+  grid-column: 2;
+  grid-row: 1 / span 2;
 
   & header {
     flex-direction: column;
@@ -272,4 +283,45 @@ input[type='number'] {
   height: 20px !important;
   object-fit: cover !important;
   background: transparent !important;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background: var(--content-brand);
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin 6s forwards;
+  position: relative;
+  overflow: hidden;
+
+  & .number {
+    font-size: 48px;
+    font-family: var(--font-body);
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  & .card.reveal .number {
+    color: var(--background-primary);
+
+    /* & .number-reveal {
+      color: var(--content-brand);
+    } */
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(620deg);
+  }
+  100% {
+    background: transparent;
+  }
 }
