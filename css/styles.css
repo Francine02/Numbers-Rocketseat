@@ -1,9 +1,9 @@
 body {
   padding: 76px 134px;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 main {
@@ -29,6 +29,10 @@ header {
     font-family: var(--font-display);
     text-transform: uppercase;
   }
+}
+
+#logo {
+  cursor: pointer;
 }
 
 #section-title {
@@ -66,14 +70,17 @@ header {
 }
 
 #section-form {
-  gap: 40px;
-  display: flex;
-  flex-direction: column;
   width: 100%;
   padding-top: 34px;
 
   grid-column: 2;
   grid-row: 1 / span 2;
+
+  & .content {
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+  }
 
   & header {
     flex-direction: column;
@@ -254,6 +261,91 @@ input[type='number'] {
   }
 }
 
+.toastify-avatar {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: cover !important;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 80px;
+  min-height: 80px;
+  width: fit-content;
+  padding: 2px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  animation: appear 0.6s ease-out forwards;
+
+  &::before {
+    width: 100%;
+    border-radius: inherit;
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background: var(--content-brand);
+    animation:
+      spin 4s 0.6s forwards,
+      disappear 0.6s 4s forwards;
+  }
+
+  & .number {
+    font-size: 48px;
+    font-family: var(--font-body);
+    font-weight: bold;
+    opacity: 0;
+    background: transparent;
+    color: var(--background-primary);
+    animation:
+      fade 1s 1.5s forwards,
+      color-text 1s 4s forwards;
+  }
+}
+
+#results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+#content-result header {
+  display: flex;
+  align-items: center;
+
+  #result-count {
+    text-align: center;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+#drawn-again {
+  animation: fade 2s ease-out forwards;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@keyframes moveLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-120px);
+  }
+}
+
 @keyframes borderMove {
   0% {
     background-position: 0% 50%;
@@ -278,50 +370,56 @@ input[type='number'] {
   }
 }
 
-.toastify-avatar {
-  width: 20px !important;
-  height: 20px !important;
-  object-fit: cover !important;
-  background: transparent !important;
-}
-
-.card {
-  width: 100px;
-  height: 100px;
-  background: var(--content-brand);
-  border-radius: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: spin 6s forwards;
-  position: relative;
-  overflow: hidden;
-
-  & .number {
-    font-size: 48px;
-    font-family: var(--font-body);
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-
-  & .card.reveal .number {
-    color: var(--background-primary);
-
-    /* & .number-reveal {
-      color: var(--content-brand);
-    } */
-  }
-}
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
-  70% {
-    transform: rotate(620deg);
-  }
+
   100% {
-    background: transparent;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes color-text {
+  from {
+    color: var(--background-primary);
+  }
+
+  to {
+    color: var(--content-brand);
   }
 }
