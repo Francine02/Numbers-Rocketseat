@@ -2,12 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--background-primary);
 }
 
 body {
   min-height: 100vh;
-  background: linear-gradient(to top, #020202a2, #020202), url('assets/background.png');
+  background:
+    linear-gradient(to top, #020202a7, var(--background-primary)), url('../assets/background.png');
+  background-color: var(--background-primary);
   background-size: contain;
   background-position: center;
 }
