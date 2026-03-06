@@ -1,6 +1,6 @@
 import { showToastMessage } from './toast.js';
 
-const WARNING_ICON = '../assets/warning.png';
+const WARNING_ICON = new URL('../assets/warning.png', import.meta.url).href;
 
 export function isMaxGreaterThanMin(min, max) {
   if (max < min || max === min) {

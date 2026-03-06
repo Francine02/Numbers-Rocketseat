@@ -5,7 +5,7 @@ import {
   isQuantityGreaterThanInterval,
 } from './validation.js';
 
-const SUCCESS_ICON = '../assets/success.png';
+const SUCCESS_ICON = new URL('../assets/success.png', import.meta.url).href;
 
 export function generateRandomNumbers(quantity, minNumber, maxNumber, shouldNotRepeat) {
   if (!isMaxGreaterThanMin(minNumber, maxNumber)) return;
