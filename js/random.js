@@ -1,7 +1,7 @@
 import { showToastMessage } from './toast.js';
 import {
   isMaxGreaterThanMin,
-  isNumberAlreadyDrawn,
+  isNumberAlreadydraw,
   isQuantityGreaterThanInterval,
 } from './validation.js';
 
@@ -36,7 +36,7 @@ function generateUniqueRandomNumbers(quantity, minNumber, maxNumber) {
     while (result.length < quantity) {
       const randomNumber = generateRandomNumber(minNumber, maxNumber);
 
-      if (!isNumberAlreadyDrawn(result, randomNumber)) {
+      if (!isNumberAlreadydraw(result, randomNumber)) {
         result.push(randomNumber);
       }
     }

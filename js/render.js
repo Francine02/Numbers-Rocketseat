@@ -3,7 +3,7 @@ const resultSection = document.getElementById('content-result');
 
 const resultCount = document.getElementById('result-count');
 const generatedNumbersSection = document.getElementById('results');
-const againButton = document.getElementById('drawn-again');
+const againButton = document.getElementById('draw-again');
 
 export function renderResult(result, count) {
   formSection.classList.add('hidden');

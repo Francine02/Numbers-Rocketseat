@@ -3,7 +3,7 @@ import { renderForm, renderResult } from './render.js';
 
 const form = document.querySelector('form');
 const logo = document.getElementById('logo');
-const againButton = document.getElementById('drawn-again');
+const againButton = document.getElementById('draw-again');
 
 const quantityOfNumbers = document.getElementById('quantity-numbers');
 const minNumber = document.getElementById('min-number');

@@ -329,7 +329,7 @@ input[type='number'] {
   display: none !important;
 }
 
-#drawn-again {
+#draw-again {
   animation: fade 2s ease-out forwards;
 
   &:disabled {

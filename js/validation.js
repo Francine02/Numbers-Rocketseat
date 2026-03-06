@@ -21,6 +21,6 @@ export function isQuantityGreaterThanInterval(quantity, min, max) {
   return false;
 }
 
-export function isNumberAlreadyDrawn(generatedNumbers, number) {
+export function isNumberAlreadydraw(generatedNumbers, number) {
   return generatedNumbers.includes(number);
 }
