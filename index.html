@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="pr-BR">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/logo.png">
-    <link rel="stylesheet" href="globals.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="./css/globals.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/media.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
-    <script src="./script.js" defer></script>
+    <script type="module" src="./js/main.js" defer></script>
     <title>Numbers</title>
 </head>
 
@@ -29,50 +29,68 @@
         </section>
 
         <section id="section-form" aria-describedby="form-description" aria-labelledby="form-title">
-            <header>
-                <h3 id="form-title" class="label-md">
-                    Quero sortear:
-                </h3>
-                <p class="text-lg" id="form-description">
-                    defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela.
-                    É
-                    rápido e fácil!
-                </p>
-            </header>
+            <div id="content-form" class="content">
+                <header>
+                    <h3 id="form-title" class="label-md">
+                        Quero sortear:
+                    </h3>
+                    <p class="text-lg" id="form-description">
+                        defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela.
+                        É
+                        rápido e fácil!
+                    </p>
+                </header>
 
-            <form>
-                <div id="section-inputs">
-                    <label for="quantity-numbers" class="label-sm label-form">
-                        Números
-                        <input maxlength="1" pattern="[1-9]*" required inputmode="numeric" name="quantity-numbers"
-                            type="text" id="quantity-numbers" class="gradient-border display-sm input-form" />
-                    </label>
-                    <label for="min-number" class="label-sm label-form">
-                        DE
-                        <input maxlength="3" pattern="[0-9]*" required inputmode="numeric" name="min-number" type="text"
-                            id="min-number" class="gradient-border display-sm input-form" />
-                    </label>
-                    <label for="max-number" class="label-sm label-form">
-                        ATÉ
-                        <input maxlength="3" pattern="[0-9]*" required inputmode="numeric" name="max-number" type="text"
-                            id="max-number" class="gradient-border display-sm input-form" />
-                    </label>
-                </div>
+                <form>
+                    <div id="section-inputs">
+                        <label for="quantity-numbers" class="label-sm label-form">
+                            Números
+                            <input maxlength="1" pattern="[1-9]*" required inputmode="numeric" name="quantity-numbers"
+                                type="text" id="quantity-numbers" class="gradient-border display-sm input-form" />
+                        </label>
+                        <label for="min-number" class="label-sm label-form">
+                            DE
+                            <input maxlength="3" pattern="[0-9]*" required inputmode="numeric" name="min-number"
+                                type="text" id="min-number" class="gradient-border display-sm input-form" />
+                        </label>
+                        <label for="max-number" class="label-sm label-form">
+                            ATÉ
+                            <input maxlength="3" pattern="[0-9]*" required inputmode="numeric" name="max-number"
+                                type="text" id="max-number" class="gradient-border display-sm input-form" />
+                        </label>
+                    </div>
 
-                <div id="div-radio">
-                    <label class="switch">
-                        <input name="not-repeat" id="not-repeat" type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
-                    <label for="not-repeat" class="text-sm">
-                        Não repetir número
-                    </label>
-                </div>
+                    <div id="div-radio">
+                        <label class="switch">
+                            <input name="not-repeat" id="not-repeat" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <label for="not-repeat" class="text-sm">
+                            Não repetir número
+                        </label>
+                    </div>
 
-                <button type="submit" class="label-sm button-form gradient-border">
-                    SORTEAR <img id="arrow-img" src="./assets/arrow.png" alt="" aria-hidden="true" />
+                    <button type="submit" class="label-sm button-form gradient-border">
+                        SORTEAR <img id="arrow-img" src="./assets/arrow.png" alt="" aria-hidden="true" />
+                    </button>
+                </form>
+            </div>
+
+            <div id="content-result" class="content hidden">
+                <header>
+                    <h3 id="result-title" class="label-md">
+                        Resultado do sorteio
+                    </h3>
+                    <p class="overline" id="result-count">
+                    </p>
+                </header>
+
+                <ul id="results" aria-live="polite"></ul>
+
+                <button type="button" id="drawn-again" class="label-sm button-form gradient-border hidden">
+                    SORTEAR NOVAMENTE <img id="arrow-img" src="./assets/again.png" alt="" aria-hidden="true" />
                 </button>
-            </form>
+            </div>
         </section>
 
         <section class="info-about">
