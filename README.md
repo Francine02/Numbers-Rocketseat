@@ -1,21 +1,20 @@
-<h1 align="center"> 
+<div align="center"> 
   <img width="41" height="32" alt="logo" src="https://github.com/user-attachments/assets/545dc5a4-68bb-49d9-be54-e4520c820b66" />
-  <br>
-  Numbers
+  <h1>Numbers</h1>
   <p >
     <img src="https://img.shields.io/github/last-commit/Francine02/Numbers-Rocketseat?style=flat&logo=git&logoColor=white&color=d9d9d9" alt="Last Commit">
     <img src="https://img.shields.io/github/languages/top/Francine02/Numbers-Rocketseat?style=flat&color=c58de7" alt="Top Language">
     <img src="https://img.shields.io/github/languages/count/Francine02/Numbers-Rocketseat?style=flat&color=020202" alt="Languages Count">
   </p>
-</h1>
+</div>
 
 **Numbers** é um desafio do curso de **JavaScript - Rocketseat**, nesse desafio é necessário desenvolver um site simples para geração de números aleatórios dentro de um intervalo definido pelo usuário, com a opção de evitar repetições e com feedback visual animado dos resultados.
 
 ---
 
 ## Visualização do Projeto:
-<img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/f6b6257c-00d4-456e-92af-f88a335badfa" />
-<img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/7244f7ac-b19f-4ed5-b427-575a9ceb02bb" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/f6b6257c-00d4-456e-92af-f88a335badfa" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/7244f7ac-b19f-4ed5-b427-575a9ceb02bb" />
 
 ---
 
